@@ -1,0 +1,6 @@
+{
+  "name": "NDVI Crop Health Monitor",
+  "description": "Satellite-based crop health dashboard utilizing spatial analytics, dynamic boundary drawing, historical performance comparison, and Gemini-powered agricultural diagnostics.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

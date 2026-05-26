@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Crisp selection styling */
+::selection {
+  background-color: #27272a;
+  color: #ffffff;
+}
+
+/* Minimalist webkit scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f4f4f5;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4d4d8;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1aa;
+}
+
+/* ==========================================================================
+   PREMIUM LIGHT / WHITE THEME STYLING
+   ========================================================================== */
+
+.light-theme {
+  background-color: #fafafa !important;
+  color: #1a1a1a !important;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px) !important;
+  background-size: 20px 20px !important;
+}
+
+.dark-theme {
+  background-color: #0c0c0e !important;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px) !important;
+  background-size: 20px 20px !important;
+}
+
+/* Custom premium card design styling */
+.premium-card {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.premium-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Navbar container */
+.light-theme nav#navbar {
+  background-color: #ffffff !important;
+  border-color: #e4e4e7 !important;
+}
+.light-theme nav#navbar h1 {
+  color: #09090b !important;
+}
+.light-theme nav#navbar .bg-zinc-950 {
+  background-color: #fafafa !important;
+  border-color: #e4e4e7 !important;
+}
+
+/* Dashboard metrics row and other sub-panels */
+.light-theme .bg-zinc-900 {
+  background-color: #ffffff !important;
+  border-color: #e4e4e7 !important;
+}
+.light-theme .bg-zinc-950 {
+  background-color: #fafafa !important;
+  border-color: #e4e4e7 !important;
+  color: #1a1a1a !important;
+}
+.light-theme .text-white {
+  color: #09090b !important;
+}
+.light-theme .text-zinc-100 {
+  color: #1a1a1a !important;
+}
+.light-theme .text-zinc-300 {
+  color: #27272a !important;
+}
+.light-theme .text-zinc-400 {
+  color: #52525b !important;
+}
+.light-theme .text-zinc-500 {
+  color: #71717a !important;
+}
+.light-theme .border-zinc-800 {
+  border-color: #e4e4e7 !important;
+}
+.light-theme .border-zinc-850 {
+  border-color: #e4e4e7 !important;
+}
+.light-theme .bg-zinc-950\/30 {
+  background-color: #fafafa !important;
+  border-color: #e4e4e7 !important;
+}
+.light-theme .bg-zinc-900\/60 {
+  background-color: #ffffff !important;
+  border-color: #e4e4e7 !important;
+}
+
+/* Sidebar and fields Registry selection and elements */
+.light-theme #fields_registry_list > div {
+  background-color: #ffffff !important;
+  border-color: #e4e4e7 !important;
+}
+.light-theme #fields_registry_list > div:hover {
+  background-color: #f4f4f5 !important;
+}
+.light-theme #fields_registry_list > div.border-zinc-900 {
+  background-color: #ffffff !important;
+  border-color: #09090b !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05) !important;
+}
+.light-theme #fields_registry_list > div button {
+  background-color: #ffffff !important;
+  border-color: #e4e4e7 !important;
+  color: #71717a !important;
+}
+.light-theme #fields_registry_list > div button:hover {
+  background-color: #fee2e2 !important;
+  border-color: #fecaca !important;
+  color: #ef4444 !important;
+}
+
+/* Map Wrapper Overrides */
+.light-theme #ndvi_map_container {
+  background-color: #fafafa !important;
+  border-color: #e4e4e7 !important;
+}
+.light-theme #ndvi_map_container button.bg-zinc-900 {
+  background-color: #ffffff !important;
+  border-color: #e4e4e7 !important;
+  color: #1a1a1a !important;
+}
+.light-theme #ndvi_map_container button.bg-zinc-900:hover {
+  background-color: #f4f4f5 !important;
+}
+.light-theme #draw_assist_banner {
+  background-color: #ffffff !important;
+  border-color: #e4e4e7 !important;
+  color: #1a1a1a !important;
+}
+.light-theme #draw_save_widget {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: #e4e4e7 !important;
+}
+.light-theme #draw_save_widget h3 {
+  color: #09090b !important;
+}
+.light-theme #draw_save_widget input,
+.light-theme #draw_save_widget select {
+  background-color: #ffffff !important;
+  border-color: #d4d4d8 !important;
+  color: #1a1a1a !important;
+}
+.light-theme #draw_save_widget input:focus,
+.light-theme #draw_save_widget select:focus {
+  border-color: #09090b !important;
+}
+.light-theme #draw_save_widget select option {
+  background-color: #ffffff !important;
+  color: #1a1a1a !important;
+}
+
+/* Layer metadata context widget in bottom-right margin */
+.light-theme #ndvi_map_container div.bg-zinc-950\/95 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: #e4e4e7 !important;
+  color: #1a1a1a !important;
+}
+.light-theme #ndvi_map_container div.bg-zinc-950\/95 h4 {
+  color: #09090b !important;
+}
+
+/* Recharts styling tweaks and dynamic container overrides */
+.light-theme .recharts-legend-item-text {
+  color: #1a1a1a !important;
+}
+.light-theme .recharts-default-tooltip {
+  background-color: #ffffff !important;
+  border-color: #e4e4e7 !important;
+}
+
+/* Operations diagnostics view inside Advisor */
+.light-theme #ai_advisor_card {
+  background-color: #ffffff !important;
+  border-color: #e4e4e7 !important;
+}
+.light-theme #ai_advisor_card .bg-zinc-950 {
+  background-color: #fafafa !important;
+  border-color: #e4e4e7 !important;
+}
+.light-theme #ai_advisor_card .bg-zinc-950\/50 {
+  background-color: #fafafa !important;
+  border-color: #e4e4e7 !important;
+}
+.light-theme #ai_advisor_card span.bg-zinc-950 {
+  background-color: #09090b !important;
+  color: #ffffff !important;
+  border-color: #09090b !important;
+}
+.light-theme #ai_advisor_card span.bg-zinc-900 {
+  background-color: #fafafa !important;
+  color: #1a1a1a !important;
+  border-color: #d4d4d8 !important;
+}
+.light-theme #ai_advisor_card span.bg-zinc-850 {
+  background-color: #ffffff !important;
+  color: #71717a !important;
+  border-color: #e4e4e7 !important;
+}
+
+.light-theme .line-through.text-zinc-500 {
+  color: #a1a1aa !important;
+}
+
+/* Leaflet maps styling specific adjustments under white/light theme */
+.light-theme .leaflet-bar a {
+  background-color: #ffffff !important;
+  color: #1a1a1a !important;
+  border-color: #e4e4e7 !important;
+}
+.light-theme .leaflet-bar a:hover {
+  background-color: #f4f4f5 !important;
+}
+
+/* Form block controls */
+.light-theme #theme_toggle_btn {
+  background-color: #27272a !important;
+  color: #ffffff !important;
+  border-color: #27272a !important;
+}
+.light-theme #theme_toggle_btn:hover {
+  background-color: #09090b !important;
+}
+
